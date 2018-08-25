@@ -1,11 +1,5 @@
-<div class="card mb-4">
-  {{pageNumber}}
-<button (click)="Increment()">vor</button>
-<button (click)="Decrement()">zurück</button>
-</div>
-<div>
-  <pdf-viewer
-  style="display:block"
+<!--<div class="clearfix"><pdf-viewer
+  style="display: block;"
   [(page)]="pageNumber"
   [show-all]="false"
   [original-size]="false"
@@ -14,5 +8,24 @@
   [original-size]="false"
   [fit-to-page]="false"
   [zoom]="0.5"
-  [src]="'http://www.monarch.de/redmine/attachments/download/24/hero3.pdf'"></pdf-viewer>
+  [src]="'http://www.monarch.de/joomla/images/angular/Festbuch2018pdf/Eustachius-Festbuch_2018_web.pdf'">Lade Festbuch. Bitte Warten</pdf-viewer>
+</div>-->
+<section>
+<div style="min-width: 300px; max-width: 500px;">
+<pdf-viewer
+[src]="'http://www.monarch.de/joomla/images/angular/Festbuch2018pdf/Eustachius-Festbuch_2018_web.pdf'"
+[render-text]="true"
+[original-size]="false"
+[autoresize]="true"
+style="display: block;"
+[(page)]="pageNumber"
+[show-all]="false"></pdf-viewer></div>
+</section>
+<section>
+<div>
+    <div class="box"><button (click)="Decrement()">&lt;&lt;</button></div>
+    <div class="box">{{pageNumber}}</div>
+    <div class="box"><button (click)="Increment()">&gt;&gt;</button></div>
 </div>
+</section>
+
